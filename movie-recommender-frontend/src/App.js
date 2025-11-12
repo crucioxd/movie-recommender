@@ -16,9 +16,10 @@ const App = () => {
 
     try {
       // ✅ Use 127.0.0.1 instead of localhost to avoid Windows Axios bug
-      const response = await axios.post("http://127.0.0.1:5000/recommend", {
-        movie,
-      });
+      const response = await axios.post(
+        "https://movie-recommender-backend.onrender.com/recommend",
+        { movie }
+      );
       setRecommendations(response.data.recommendations);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
